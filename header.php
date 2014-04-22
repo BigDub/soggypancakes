@@ -1,17 +1,17 @@
 <?php
-if (!isempty(_CLASS()))
+if (!isempty($_SYRUP))
 {
-	include ROOT.'/classes/'._CLASS().'.php';
+	include ROOT.'/syrups/'.$_SYRUP.'.php';
 }
 ?>
 <!DOCTYPE HTML>
 	<html>
 	<head>
 <?php
-if (count(_KEYWORDS()) > 0) { echo '<meta name="keywords" content="';
-	$number = count(_KEYWORDS());
+if (count($_KEYWORDS) > 0) { echo '<meta name="keywords" content="';
+	$number = count($_KEYWORDS);
 	$index = 0;
-	foreach(_KEYWORDS() as $keyword)
+	foreach(_KEYWORDS as $keyword)
 	{
 		echo $keyword;
 		if(++$index < $number)
@@ -19,33 +19,33 @@ if (count(_KEYWORDS()) > 0) { echo '<meta name="keywords" content="';
 	}
 	echo '">';
 }
-if (!isempty(_DESCRIPTION())) echo '<meta name="description" content="'._DESCRIPTION().'">';
-if (!isempty(_AUTHOR())) echo '<meta name="author" content="'._AUTHOR().'">';
-if (!isempty(_TITLE())) echo '<title>'._TITLE().'</title>';
-if (count(_STYLE()) > 0)
+if (!isempty($_DESCRIPTION)) echo '<meta name="description" content="'.$_DESCRIPTION.'">';
+if (!isempty($_AUTHOR)) echo '<meta name="author" content="'.$_AUTHOR.'">';
+if (!isempty($_TITLE)) echo '<title>'.$_TITLE.'</title>';
+if (count($_STYLE) > 0)
 {
 	echo '<style>';
-	foreach (_STYLE() as $stylesheet)
+	foreach ($_STYLE as $stylesheet)
 	{
 		if (is_file($stylesheet))
 		{
 			include $stylesheet;
 		} else {
-			error_log("Unable to include stylesheet '$stylesheet' for request '"._URI().'\'');
+			error_log("Unable to include stylesheet '$stylesheet' for request '".$_URI.'\'');
 		}
 	}
 	echo '</style>';
 }
-if (count(_JAVASCRIPT()) > 0)
+if (count($_JAVASCRIPT) > 0)
 {
 	echo '<script>';
-	foreach (_JAVASCRIPT() as $script)
+	foreach ($_JAVASCRIPT as $script)
 	{
 		if (is_file($script))
 		{
 			include $script;
 		} else {
-			error_log("Unable to include script '$script' for request '"._URI().'\'');
+			error_log("Unable to include script '$script' for request '".$_URI.'\'');
 		}
 	}
 	echo '</script>';
@@ -54,13 +54,12 @@ if (count(_JAVASCRIPT()) > 0)
 	</head>
 	<body>
 <?php
-echo isempty(_TEMPLATE());
-if (!isempty(_TEMPLATE())) {
-	$temp = ROOT.'/templates/'._TEMPLATE().'-head.php';
+if (!isempty($_TEMPLATE)) {
+	$temp = ROOT.'/templates/'.$_TEMPLATE.'-head.php';
 	if (is_file($temp))
 	{
 		include $temp;
 	} else {
-		error_log("Unable to include template '$temp' for request '"._URI().'\'');
+		error_log("Unable to include template '$temp' for request '".$_URI.'\'');
 	}
 }

@@ -1,5 +1,5 @@
 <?php
-setClass('tools');
+$_SYRUP = 'tools';
 loadHeader();
 ?>
 Test
