@@ -1,22 +1,43 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #AB7C36;
+	height: 100%;
+	background: #ab8a36; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ab8a36 0%, #8b6500 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ab8a36), color-stop(100%,#8b6500)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ab8a36 0%,#8b6500 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ab8a36 0%,#8b6500 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ab8a36 0%,#8b6500 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ab8a36 0%,#8b6500 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab8a36', endColorstr='#8b6500',GradientType=0 ); /* IE6-9 */
+	background-attachment: fixed;
+
 }
 #sp_header, #sp_footer {
-	background: #FCB345;
+	background: #FCC945;
+	border-bottom: 4px solid #AB8A36;
 }
 #sp_header {
 	width: 100%;
-	height: 80px;
-	background: #;
 }
-#sp_header, #sp_page, #sp_footer {
-	box-shadow: 0 5px 20px rgba(0,0,0, .3);
+#sp_header, #sp_page {
+	box-shadow: 0 10px 20px rgba(0,0,0, .5);
+}
+#sp_header_content, #sp_page, #sp_footer {
+	max-width: 1225px;
+	min-width: 580px;
 }
 #sp_header_content {
-	width: 1024px;
+	min-height: 80px;
 	margin: auto;
+}
+#sp_logo {
+	width: 97px;
+	height: 60px;
+	margin-top: 6px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: left;
 }
 #sp_menu {
 	float: left;
@@ -25,11 +46,24 @@ body {
 	margin-bottom: 10px;
 	line-height: 20px;
 }
-#sp_ad_banner {
+div.clear {
+	clear: both;
+}
+div.cutout {
+	border-top: 4px solid #AB8A36;
+	border-left: 2px solid #AB8A36;
+}
+div.cutout, #sp_page {
 	background: #fff;
+}
+div.inshadow {
+	box-shadow: inset 0px 5px 20px rgba(0,0,0, .3);
+}
+#sp_ad_banner {
 	position: relative;
 	float: right;
-	margin: 10px 0;
+	margin-top: 6px;
+	margin-bottom: 10px;
 	height: 60px;
 	width: 468px;
 	overflow: hidden;
@@ -46,19 +80,18 @@ body {
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	box-shadow: inset 0px 5px 20px rgba(0,0,0, .3);
 }
 #sp_page {
-	width: 1024px;
 	margin: auto;
-	background: #fff;
 }
 #sp_page_content {
 	padding: 30px;
 	padding-top: 10px;
+	border-right: 2px solid #959595;
 }
 #sp_footer {
-	width: 1024px;
+	box-sizing: border-box;
+	border-right: 2px solid #AB8A36;
 	margin: auto;
 }
 #sp_footer_content {
