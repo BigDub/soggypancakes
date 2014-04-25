@@ -1,58 +1,61 @@
 <?php
 define('ROOT', dirname(__FILE__));
 
-$_URI = $_SERVER['REQUEST_URI'];
-$_KEYWORDS = array();
-$_DESCRIPTION = null;
-$_AUTHOR = 'William Wyatt Earnshaw';
-$_TITLE = 'SoggyPancakes';
-$_STYLE = array(ROOT.'/styles/global.css');
-$_JAVASCRIPT = array();
-$_SYRUP = null;
-$_TEMPLATE = null;
+$SP_URI = $_SERVER['REQUEST_URI'];
+$SP_KEYWORDS = array();
+$SP_DESCRIPTION = null;
+$SP_AUTHOR = 'William Wyatt Earnshaw';
+$SP_TITLE = 'SoggyPancakes';
+$SP_STYLE = array(ROOT.'/styles/global.css');
+$SP_JAVASCRIPT = array();
+$SP_SYRUP = null;
+$SP_TEMPLATE = null;
 
 function pushKeyword($keyword)
 {
-	array_push($_KEYWORDS, $keyword);
+	global $SP_KEYWORDS;
+	array_push($SP_KEYWORDS, $keyword);
 }
 
 function pushStyle($stylesheet)
 {
-	array_push($_STYLE, $stylesheet);
+	global $SP_STYLE;
+	array_push($SP_STYLE, $stylesheet);
 }
 
 function pushScript($javascript)
 {
-	array_push($_JAVASCRIPT, $javascript);
+	global $SP_JAVASCRIPT;
+	array_push($SP_JAVASCRIPT, $javascript);
 }
 
 function loadHeader()
 {
 global
-$_URI,
-$_KEYWORDS,
-$_DESCRIPTION,
-$_AUTHOR,
-$_TITLE,
-$_STYLE,
-$_JAVASCRIPT,
-$_SYRUP,
-$_TEMPLATE;
+$SP_URI,
+$SP_KEYWORDS,
+$SP_DESCRIPTION,
+$SP_AUTHOR,
+$SP_TITLE,
+$SP_STYLE,
+$SP_JAVASCRIPT,
+$SP_SYRUP,
+$SP_TEMPLATE;
 	include ROOT.'/header.php';
 }
 
 function loadFooter()
 {
 global
-$_URI,
-$_KEYWORDS,
-$_DESCRIPTION,
-$_AUTHOR,
-$_TITLE,
-$_STYLE,
-$_JAVASCRIPT,
-$_SYRUP,
-$_TEMPLATE;
+$SP_URI,
+$SP_KEYWORDS,
+$SP_DESCRIPTION,
+$SP_AUTHOR,
+$SP_TITLE,
+$SP_STYLE,
+$SP_JAVASCRIPT,
+$SP_SYRUP,
+$SP_TEMPLATE;
 	include ROOT.'/footer.php';
 }
 

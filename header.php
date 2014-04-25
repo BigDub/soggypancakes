@@ -1,15 +1,25 @@
 <?php
-if (!isempty($_SYRUP))
+global
+$SP_URI,
+$SP_KEYWORDS,
+$SP_DESCRIPTION,
+$SP_AUTHOR,
+$SP_TITLE,
+$SP_STYLE,
+$SP_JAVASCRIPT,
+$SP_SYRUP,
+$SP_TEMPLATE;
+if (!isempty($SP_SYRUP))
 {
-	include ROOT.'/syrups/'.$_SYRUP.'.php';
+	include ROOT.'/syrups/'.$SP_SYRUP.'.php';
 }
 ?>
 <!DOCTYPE HTML>
 	<html>
 	<head>
 <?php
-if (count($_KEYWORDS) > 0) { echo '<meta name="keywords" content="';
-	$number = count($_KEYWORDS);
+if (count($SP_KEYWORDS) > 0) { echo '<meta name="keywords" content="';
+	$number = count($SP_KEYWORDS);
 	$index = 0;
 	foreach(_KEYWORDS as $keyword)
 	{
@@ -19,33 +29,33 @@ if (count($_KEYWORDS) > 0) { echo '<meta name="keywords" content="';
 	}
 	echo '">';
 }
-if (!isempty($_DESCRIPTION)) echo '<meta name="description" content="'.$_DESCRIPTION.'">';
-if (!isempty($_AUTHOR)) echo '<meta name="author" content="'.$_AUTHOR.'">';
-if (!isempty($_TITLE)) echo '<title>'.$_TITLE.'</title>';
-if (count($_STYLE) > 0)
+if (!isempty($SP_DESCRIPTION)) echo '<meta name="description" content="'.$SP_DESCRIPTION.'">';
+if (!isempty($SP_AUTHOR)) echo '<meta name="author" content="'.$SP_AUTHOR.'">';
+if (!isempty($SP_TITLE)) echo '<title>'.$SP_TITLE.'</title>';
+if (count($SP_STYLE) > 0)
 {
 	echo '<style>';
-	foreach ($_STYLE as $stylesheet)
+	foreach ($SP_STYLE as $stylesheet)
 	{
 		if (is_file($stylesheet))
 		{
 			include $stylesheet;
 		} else {
-			error_log("Unable to include stylesheet '$stylesheet' for request '".$_URI.'\'');
+			error_log("Unable to include stylesheet '$stylesheet' for request '".$SP_URI.'\'');
 		}
 	}
 	echo '</style>';
 }
-if (count($_JAVASCRIPT) > 0)
+if (count($SP_JAVASCRIPT) > 0)
 {
 	echo '<script>';
-	foreach ($_JAVASCRIPT as $script)
+	foreach ($SP_JAVASCRIPT as $script)
 	{
 		if (is_file($script))
 		{
 			include $script;
 		} else {
-			error_log("Unable to include script '$script' for request '".$_URI.'\'');
+			error_log("Unable to include script '$script' for request '".$SP_URI.'\'');
 		}
 	}
 	echo '</script>';
@@ -54,12 +64,13 @@ if (count($_JAVASCRIPT) > 0)
 	</head>
 	<body>
 <?php
-if (!isempty($_TEMPLATE)) {
-	$temp = ROOT.'/templates/'.$_TEMPLATE.'-head.php';
+if (!isempty($SP_TEMPLATE))
+{
+	$temp = ROOT.'/templates/'.$SP_TEMPLATE.'-head.php';
 	if (is_file($temp))
 	{
 		include $temp;
 	} else {
-		error_log("Unable to include template '$temp' for request '".$_URI.'\'');
+		error_log("Unable to include template '$temp' for request '".$SP_URI.'\'');
 	}
 }

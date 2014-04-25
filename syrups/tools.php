@@ -8,5 +8,5 @@ pushKeyword('impaired');
 
 pushStyle('tools.css');
 
-$_TEMPLATE = 'tools';
-$_TITLE = 'Tools for the Technologically Impaired';
+$SP_TEMPLATE = 'tools';
+$SP_TITLE = 'Tools for the Technologically Impaired';

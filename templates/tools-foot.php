@@ -1,3 +1,4 @@
 </div>
-<div id="_foot">
+<div id="sp_foot">
+Foot
 </div>
