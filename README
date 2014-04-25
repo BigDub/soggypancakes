@@ -1,4 +1,7 @@
 Source for proposed SoggyPancakes.com
 
 Color scheme:
-http://www.colorschemedesigner.com/#1d51TFivfDeyZ
+http://www.colorschemedesigner.com/#0M21RFivfDeyZ
+
+In apache virtualhost make sure to add
+	php_value auto_prepend_file global.php

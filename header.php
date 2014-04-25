@@ -21,7 +21,7 @@ if (!isempty($SP_SYRUP))
 if (count($SP_KEYWORDS) > 0) { echo '<meta name="keywords" content="';
 	$number = count($SP_KEYWORDS);
 	$index = 0;
-	foreach(_KEYWORDS as $keyword)
+	foreach($SP_KEYWORDS as $keyword)
 	{
 		echo $keyword;
 		if(++$index < $number)
@@ -34,7 +34,7 @@ if (!isempty($SP_AUTHOR)) echo '<meta name="author" content="'.$SP_AUTHOR.'">';
 if (!isempty($SP_TITLE)) echo '<title>'.$SP_TITLE.'</title>';
 if (count($SP_STYLE) > 0)
 {
-	echo '<style>';
+	echo '<style type="text/css">';
 	foreach ($SP_STYLE as $stylesheet)
 	{
 		if (is_file($stylesheet))

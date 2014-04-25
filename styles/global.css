@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #AB7C36;
+}
+#sp_header, #sp_footer {
+	background: #FCB345;
+}
+#sp_header {
+	width: 100%;
+	height: 80px;
+	background: #;
+}
+#sp_header, #sp_page, #sp_footer {
+	box-shadow: 0 5px 20px rgba(0,0,0, .3);
+}
+#sp_header_content {
+	width: 1024px;
+	margin: auto;
+}
+#sp_menu {
+	float: left;
+	height: 20px;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	line-height: 20px;
+}
+#sp_ad_banner {
+	background: #fff;
+	position: relative;
+	float: right;
+	margin: 10px 0;
+	height: 60px;
+	width: 468px;
+	overflow: hidden;
+	line-height: 60px;
+	text-align: center;
+}
+#sp_ad_banner span {
+	width: 100%;
+	position: absolute;
+}
+#sp_ad_banner_shadow {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	box-shadow: inset 0px 5px 20px rgba(0,0,0, .3);
+}
+#sp_page {
+	width: 1024px;
+	margin: auto;
+	background: #fff;
+}
+#sp_page_content {
+	padding: 30px;
+	padding-top: 10px;
+}
+#sp_footer {
+	width: 1024px;
+	margin: auto;
+}
+#sp_footer_content {
+	padding: 10px;
+}
