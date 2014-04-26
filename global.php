@@ -9,7 +9,7 @@ $SP_TITLE = 'SoggyPancakes';
 $SP_STYLE = array(ROOT.'/styles/global.css');
 $SP_JAVASCRIPT = array();
 $SP_SYRUP = null;
-$SP_TEMPLATE = null;
+$SP_TEMPLATE = 'default';
 
 function pushKeyword($keyword)
 {
