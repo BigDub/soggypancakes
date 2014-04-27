@@ -1,18 +1,18 @@
-#sortForm {
+form {
 	width: 100%;
 	min-height: 300px;
 }
-#sortForm table {
+form table {
 	width: 100%;
 	text-align: center;
 }
-#sortForm textarea {
+form textarea {
 	width: 100%;
 	min-height: 300px;
 	margin: 0 auto;
 	display: block;
 	resize: vertical;
 }
-#sortForm input {
+form input {
 	padding: 5px 20px;
 }

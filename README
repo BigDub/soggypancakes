@@ -5,3 +5,12 @@ http://www.colorschemedesigner.com/#0M21RFivfDeyZ
 
 In apache virtualhost make sure to add
 	php_value auto_prepend_file global.php
+
+Tools proposed:
+	random number gen
+	various hash algorithms
+	html entifier
+	raffle
+	name generator?
+	ascii <-> hex <-> binary
+	simple encryption with PSK

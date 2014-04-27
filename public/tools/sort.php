@@ -14,10 +14,7 @@ if(!isempty($_POST['toSort']))
 }
 ?>
 <h1>Alphabetical Sorter</h1>
-<p>Sorting a bunch of lines alphabetically is fairly straightforward task for a computer, but not as easy for a human. Whether it be book titles, names, jobs, or any other kind of list, sometimes having it sorted would be nice, but just takes too much effort. Why not let a computer do it?
-<br />
-Enter the things you want sorted on the left, separating each one to its own line, and press the sort button in the middle. The computer will do the rest.</p>
-<form id="sortForm" method="post" action="sort.php">
+<form method="post" action="sort.php">
 <table>
 <tr>
 <td><textarea name="toSort" autofocus><?php
@@ -39,5 +36,8 @@ if(!isempty($sorted))
 </tr>
 </table>
 </form>
+<p>Sorting a bunch of lines alphabetically is fairly straightforward task for a computer, but not as easy for a human. Whether it be book titles, names, jobs, or any other kind of list, sometimes having it sorted would be nice, but just takes too much effort. Why not let a computer do it?
+<br />
+Enter the things you want sorted on the left, separating each one to its own line, and press the sort button in the middle. The computer will do the rest.</p>
 <?php
 loadFooter();
