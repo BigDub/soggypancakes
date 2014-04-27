@@ -1,7 +1,5 @@
 <?php
 $SP_SYRUP = 'tools';
 loadHeader();
-?>
-Test
-<?php
+include ROOT.'/menus/tools.php';
 loadFooter();

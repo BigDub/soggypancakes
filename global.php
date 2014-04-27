@@ -6,27 +6,75 @@ $SP_KEYWORDS = array();
 $SP_DESCRIPTION = null;
 $SP_AUTHOR = 'William Wyatt Earnshaw';
 $SP_TITLE = 'SoggyPancakes';
-$SP_STYLE = array(ROOT.'/styles/global.css');
+$SP_STYLE = array('global.css');
 $SP_JAVASCRIPT = array();
-$SP_SYRUP = null;
 $SP_TEMPLATE = 'default';
+$SP_DEBUG = false;
 
-function pushKeyword($keyword)
+function pushKeywords()
 {
 	global $SP_KEYWORDS;
-	array_push($SP_KEYWORDS, $keyword);
+	$SP_KEYWORDS = array_merge($SP_KEYWORDS, func_get_args());
 }
 
-function pushStyle($stylesheet)
+function pushStyles()
 {
 	global $SP_STYLE;
-	array_push($SP_STYLE, $stylesheet);
+	$SP_STYLE = array_merge($SP_STYLE, func_get_args());
 }
 
-function pushScript($javascript)
+function pushScripts()
 {
 	global $SP_JAVASCRIPT;
-	array_push($SP_JAVASCRIPT, $javascript);
+	$SP_JAVASCRIPT = array_merge($SP_JAVASCRIPT, func_get_args());
+}
+
+function setTitle($title)
+{
+	global $SP_TITLE;
+	$SP_TITLE = $title;
+}
+
+function loadSyrup($syrup)
+{
+global
+$SP_URI,
+$SP_KEYWORDS,
+$SP_DESCRIPTION,
+$SP_AUTHOR,
+$SP_TITLE,
+$SP_STYLE,
+$SP_JAVASCRIPT,
+$SP_TEMPLATE,
+$SP_DEBUG;
+	$file = ROOT.'/syrups/'.$syrup;
+	if (is_file($file))
+	{
+		include $file;
+	} else {
+		error_log("Unable to load syrup '$syrup' for request '".$SP_URI.'\'');
+	}
+}
+
+function loadController($controller)
+{
+global
+$SP_URI,
+$SP_KEYWORDS,
+$SP_DESCRIPTION,
+$SP_AUTHOR,
+$SP_TITLE,
+$SP_STYLE,
+$SP_JAVASCRIPT,
+$SP_TEMPLATE,
+$SP_DEBUG;
+	$file = ROOT.'/controllers/'.$controller;
+	if (is_file($file))
+	{
+		include $file;
+	} else {
+		error_log("Unable to load controller '$controller' for request '".$SP_URI.'\'');
+	}
 }
 
 function loadHeader()
@@ -39,8 +87,8 @@ $SP_AUTHOR,
 $SP_TITLE,
 $SP_STYLE,
 $SP_JAVASCRIPT,
-$SP_SYRUP,
-$SP_TEMPLATE;
+$SP_TEMPLATE,
+$SP_DEBUG;
 	include ROOT.'/header.php';
 }
 
@@ -54,12 +102,17 @@ $SP_AUTHOR,
 $SP_TITLE,
 $SP_STYLE,
 $SP_JAVASCRIPT,
-$SP_SYRUP,
-$SP_TEMPLATE;
+$SP_TEMPLATE,
+$SP_DEBUG;
 	include ROOT.'/footer.php';
 }
 
 function isempty(&$obj)
 {
-	return (!isset($obj) || $obj == null || $obj === '');
+	return (
+		!isset($obj) ||
+		$obj == null ||
+		$obj === '' ||
+		(is_array($obj) && count($obj) == 0)
+	);
 }

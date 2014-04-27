@@ -1,7 +1,7 @@
 <?php
 loadHeader();
 ?>
-SoggyPancakes
+<h1>SoggyPancakes</h1>
 <?php
 loadFooter();
 ?>

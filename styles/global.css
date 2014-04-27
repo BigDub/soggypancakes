@@ -13,6 +13,12 @@ a:hover {
 a:active {
 	color: #FF0000;
 }
+table {
+	border-collapse: collapse;
+}
+#sp_debug {
+	display: none;
+}
 #sp_header, #sp_footer, body, #sp_menu {
 	background: #FCB345;
 }

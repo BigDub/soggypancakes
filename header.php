@@ -1,19 +1,3 @@
-<?php
-global
-$SP_URI,
-$SP_KEYWORDS,
-$SP_DESCRIPTION,
-$SP_AUTHOR,
-$SP_TITLE,
-$SP_STYLE,
-$SP_JAVASCRIPT,
-$SP_SYRUP,
-$SP_TEMPLATE;
-if (!isempty($SP_SYRUP))
-{
-	include ROOT.'/syrups/'.$SP_SYRUP.'.php';
-}
-?>
 <!DOCTYPE HTML>
 	<html>
 	<head>
@@ -37,9 +21,10 @@ if (count($SP_STYLE) > 0)
 	echo '<style type="text/css">';
 	foreach ($SP_STYLE as $stylesheet)
 	{
-		if (is_file($stylesheet))
+		$file = ROOT.'/styles/'.$stylesheet;
+		if (is_file($file))
 		{
-			include $stylesheet;
+			include $file;
 		} else {
 			error_log("Unable to include stylesheet '$stylesheet' for request '".$SP_URI.'\'');
 		}
@@ -51,9 +36,10 @@ if (count($SP_JAVASCRIPT) > 0)
 	echo '<script>';
 	foreach ($SP_JAVASCRIPT as $script)
 	{
-		if (is_file($script))
+		$file = ROOT.'/scripts/'.$script;
+		if (is_file($file))
 		{
-			include $script;
+			include $file;
 		} else {
 			error_log("Unable to include script '$script' for request '".$SP_URI.'\'');
 		}
@@ -66,11 +52,11 @@ if (count($SP_JAVASCRIPT) > 0)
 <?php
 if (!isempty($SP_TEMPLATE))
 {
-	$temp = ROOT.'/templates/'.$SP_TEMPLATE.'-head.php';
-	if (is_file($temp))
+	$file = ROOT.'/templates/'.$SP_TEMPLATE.'-head.php';
+	if (is_file($file))
 	{
-		include $temp;
+		include $file;
 	} else {
-		error_log("Unable to include template '$temp' for request '".$SP_URI.'\'');
+		error_log("Unable to include template '$SP_TEMPLATE' for request '".$SP_URI.'\'');
 	}
 }
