@@ -56,7 +56,7 @@ $SP_DEBUG;
 	}
 }
 
-function loadController($controller)
+function loadModule($module)
 {
 global
 $SP_URI,
@@ -68,12 +68,12 @@ $SP_STYLE,
 $SP_JAVASCRIPT,
 $SP_TEMPLATE,
 $SP_DEBUG;
-	$file = ROOT.'/controllers/'.$controller;
+	$file = ROOT.'/modules/'.$module;
 	if (is_file($file))
 	{
-		include $file;
+		include_once $file;
 	} else {
-		error_log("Unable to load controller '$controller' for request '".$SP_URI.'\'');
+		error_log("Unable to load module '$module' for request '".$SP_URI.'\'');
 	}
 }
 
@@ -89,7 +89,7 @@ $SP_STYLE,
 $SP_JAVASCRIPT,
 $SP_TEMPLATE,
 $SP_DEBUG;
-	include ROOT.'/header.php';
+	include_once ROOT.'/header.php';
 }
 
 function loadFooter()
@@ -104,7 +104,7 @@ $SP_STYLE,
 $SP_JAVASCRIPT,
 $SP_TEMPLATE,
 $SP_DEBUG;
-	include ROOT.'/footer.php';
+	include_once ROOT.'/footer.php';
 }
 
 function isempty(&$obj)

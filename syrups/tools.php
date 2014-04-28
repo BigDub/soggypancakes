@@ -1,3 +1,4 @@
 <?php
-pushKeywords('web', 'tool', 'easy', 'simple', 'technology', 'impaired');
-loadController('security.php');
+pushKeywords('web', 'tool', 'easy', 'simple');
+loadModule('strings.php');
+setTitle('Tools for the Compuationally Impaired');

@@ -1,1 +1,24 @@
 /*TODO*/
+table {
+	width: 100%;
+	min-height: 200px;
+}
+table div {
+	clear: both;
+}
+input.num {
+	float: right;
+	width: 40px;
+}
+td.sub {
+	text-align: center;
+	width: 20%;
+}
+td.txt {
+	width: 50%;
+}
+textarea {
+	width: 100%;
+	height: 100%;
+	resize: vertical;
+}
