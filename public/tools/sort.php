@@ -5,11 +5,16 @@ setTitle('Alphabetical Sorter::'.$SP_TITLE);
 pushStyles('sort.css');
 $toSort = null;
 $sorted = null;
+$reverse = false;
+if(!isempty($_POST['reverse']) && $_POST['reverse'] == true)
+	$reverse = true;
 if(!isempty($_POST['toSort']))
 {
 	$toSort = $_POST['toSort'];
 	$sorted = explode("\n", $toSort);
 	natcasesort($sorted);
+	if($reverse)
+		$sorted = array_reverse($sorted);
 }
 include ROOT.'/header.php';
 ?>
@@ -26,7 +31,10 @@ if(!isempty($toSort))
 	echo toScreen($toSort);
 }
 ?></textarea></td>
-<td><input type="submit" value="Sort"></td>
+<td>
+<input type="submit" value="Sort">
+<input type="checkbox" name="reverse"<?php if($reverse) echo ' checked'; ?>> Reverse
+</td>
 <td><textarea><?php
 if(!isempty($sorted))
 {
