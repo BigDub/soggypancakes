@@ -1,14 +1,17 @@
 <?php
-if (!isempty($SP_TEMPLATE)) {
-	$file = ROOT."/templates/$SP_TEMPLATE-foot.php";
-	if (is_file($file))
+if (count($SP_TEMPLATE) > 0)
+{
+	foreach($SP_TEMPLATE as $template)
 	{
-		include $file;
-	} else {
-		error_log("Unable to include template '$SP_TEMPLATE' for request '$SP_URI'");
+		$file = ROOT."/templates/$template-foot.php";
+		if (is_file($file))
+		{
+			include $file;
+		}
 	}
 }
-if($SP_DEBUG) {
+if($SP_DEBUG)
+{
 	echo '<div id="sp_debug">';
 	print_r($GLOBALS);
 	echo '</div>';

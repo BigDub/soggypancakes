@@ -1,4 +1,4 @@
-<span>Please support us by disabling your adblock, or adding us as an exception.</span>
+<span>Please support us by disabling your adblock or adding us as an exception.</span>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Banner Display Blank -->
 <ins class="adsbygoogle"

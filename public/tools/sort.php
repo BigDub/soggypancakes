@@ -1,9 +1,8 @@
 <?php
-loadSyrup('tools.php');
+loadSyrups('tools.php');
 pushKeywords('alphabetical', 'sort');
 setTitle('Alphabetical Sorter::'.$SP_TITLE);
 pushStyles('sort.css');
-loadHeader();
 $toSort = null;
 $sorted = null;
 if(!isempty($_POST['toSort']))
@@ -12,6 +11,7 @@ if(!isempty($_POST['toSort']))
 	$sorted = explode("\n", $toSort);
 	natcasesort($sorted);
 }
+include ROOT.'/header.php';
 ?>
 <h1>Alphabetical Sorter</h1>
 <p>Sorting a bunch of lines alphabetically is a fairly straightforward task for a computer, but not as easy for a human. Whether it be book titles, names, jobs, or any other kind of list, sometimes having it sorted would be nice, but just takes too much effort. Why not let a computer do it?
@@ -40,4 +40,4 @@ if(!isempty($sorted))
 </table>
 </form>
 <?php
-loadFooter();
+include ROOT.'/footer.php';

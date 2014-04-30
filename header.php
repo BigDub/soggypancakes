@@ -50,13 +50,15 @@ if (count($SP_JAVASCRIPT) > 0)
 	</head>
 	<body>
 <?php
-if (!isempty($SP_TEMPLATE))
+if (count($SP_TEMPLATE) > 0)
 {
-	$file = ROOT.'/templates/'.$SP_TEMPLATE.'-head.php';
-	if (is_file($file))
-	{
-		include $file;
-	} else {
-		error_log("Unable to include template '$SP_TEMPLATE' for request '".$SP_URI.'\'');
+	foreach($SP_TEMPLATE as $template) {
+		$file = ROOT.'/templates/'.$template.'-head.php';
+		if (is_file($file))
+		{
+			include $file;
+		} else {
+			error_log("Unable to include template '$template' for request '".$SP_URI.'\'');
+		}
 	}
 }

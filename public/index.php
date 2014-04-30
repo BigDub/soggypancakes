@@ -1,7 +1,7 @@
 <?php
-loadHeader();
+include ROOT.'/header.php';
 ?>
 <h1>SoggyPancakes</h1>
 <?php
-loadFooter();
+include ROOT.'/footer.php';
 ?>

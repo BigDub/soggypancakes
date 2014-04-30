@@ -1,10 +1,9 @@
 <?php
 define('NUMCAP', 100);
-loadSyrup('tools.php');
+loadSyrups('tools.php');
 pushKeywords('random', 'number', 'generator');
 setTitle('Random Number Generator::'.$SP_TITLE);
 pushStyles('numbers.css');
-loadHeader();
 $number = null;
 $min = 0;
 $max = 100;
@@ -34,6 +33,7 @@ if($min > $max)
 	$min = $max;
 	$max = $tmp;
 }
+include ROOT.'/header.php';
 ?>
 <h1>Random Number Generator</h1>
 <p>One thing both people and computers are really bad at is coming up with something totally random. The good news is, unless you're a computer as well, the patterns behind a random number generator like this are so complicated they may as well be random... for most purposes.</p>
@@ -84,4 +84,4 @@ if(!isempty($number))
 </table>
 </form>
 <?php
-loadFooter();
+include ROOT.'/footer.php';

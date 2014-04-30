@@ -1,10 +1,15 @@
-/*TODO*/
 table {
 	width: 100%;
 	min-height: 200px;
 }
 td {
 	text-align: center;
+}
+input {
+	width: 80%;
+}
+select {
+	width: 100%;
 }
 textarea {
 	width: 100%;

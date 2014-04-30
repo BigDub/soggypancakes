@@ -1,4 +1,4 @@
 <?php
 pushKeywords('web', 'tool', 'easy', 'simple');
-loadModule('strings.php');
+loadModules('strings.php');
 setTitle('Tools for the Compuationally Impaired');
